@@ -1,5 +1,5 @@
 var assert = require('assert');
-var headdown = require('../lib/headdown');
+var headdown = require('../index');
 var fs = require('fs');
 
 var prefix = 'test/files/';
@@ -20,7 +20,7 @@ function dbgOutput(fn, data, filename) {
 }
 
 function renderCompare(data, filename) {
-  fileCompare(headdown.fullRender, data, filename);
+  fileCompare(headdown.renderString, data, filename);
 }
 
 exports['test version'] = function() {
