@@ -1,5 +1,5 @@
 
 test:
-	@echo "populate me"
+	expresso test/*.test.js
 
 .PHONY: test

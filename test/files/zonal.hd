@@ -1,0 +1,5 @@
+---
+names: { names: ['foo', 'bar', 'baz']}};
+---
+<% names.forEach(function(name) { %>* <%= name %>
+<% })%>
