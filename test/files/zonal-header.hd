@@ -1,5 +1,11 @@
 ---
-names: { names: ['foo', 'bar', 'baz']}};
+{
+"names": ["foo", "bar", "baz"]
+}
 ---
+#hello
 <% names.forEach(function(name) { %>* <%= name %>
+<% })%>
+#world  
+<% zonal.names.forEach(function(name) { %>* <%= name %>
 <% })%>
