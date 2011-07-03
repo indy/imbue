@@ -23,7 +23,7 @@ function renderCompare(data, filename) {
 }
 
 exports['test version'] = function() {
-  assert.equal(headdown.version, '0.0.1');
+  assert.equal(headdown.version, '0.0.2');
 }
 
 exports['deep merge'] = function() {
