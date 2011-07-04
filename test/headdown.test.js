@@ -26,7 +26,7 @@ function compare(data, filename) {
 }
 
 exports['test version'] = function() {
-  assert.equal(headdown.version, '0.0.2');
+  assert.equal(headdown.version, '0.0.3');
 }
 
 exports['render without header'] = function() {
