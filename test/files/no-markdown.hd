@@ -1,0 +1,6 @@
+---
+"names": ["foo", "bar", "baz"],
+"_noMarkdown": true
+---
+<% names.forEach(function(name) { %>* <%= name %>
+<% })%>
