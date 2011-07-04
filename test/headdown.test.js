@@ -16,13 +16,19 @@ function dbgOutput(fn, data, filename) {
 function compare(data, filename) {
   var input = fs.readFileSync(prefix + filename, 'utf8');
   var expected = fs.readFileSync(prefix + filename + postfix, 'utf8');
+
   assert.equal(headdown.renderString(input, data), expected);
+  assert.equal(headdown.renderFile(prefix + filename, data), expected);
 
   var compiledFn = headdown.compile(input, {});
   assert.equal(compiledFn(data), expected);
 
   var compiledFn2 = headdown.compile(input, {bindings: data});
   assert.equal(compiledFn2({}), expected);
+}
+
+function compareHeader(filename, expected) {
+  assert.eql(headdown.getHeaderFromFile(prefix + filename), expected);
 }
 
 exports['test version'] = function() {
@@ -52,4 +58,10 @@ exports['render without markdown'] = function() {
   compare({}, 'no-markdown.hd');
 };
 
+exports['compare header'] = function() {
+  compareHeader('header.hd', {names: ["foo", "bar", "baz"]});
+  compareHeader('zonal-header.hd', {names: ["foo", "bar", "baz"], 
+                                    title: "hello",
+                                    subtitle: "world"});
+};
 
