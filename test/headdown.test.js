@@ -25,8 +25,6 @@ function compare(data, filename) {
   assert.equal(compiledFn2({}), expected);
 }
 
-//dbgOutput(headdown.renderString, {}, 'no-markdown.hd');
-
 exports['test version'] = function() {
   assert.equal(headdown.version, '0.0.2');
 }
@@ -54,5 +52,4 @@ exports['render without markdown'] = function() {
   compare({}, 'no-markdown.hd');
 };
 
-//var zonal = {zonal: { names: ['baq', 'baqq', 'baqqq']}};
-//dbgOutput(headdown.renderString, zonal, 'zonal-header.hd');
+

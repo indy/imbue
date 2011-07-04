@@ -1,5 +1,4 @@
 ---
 "names": ["foo", "bar", "baz"]
 ---
-<% names.forEach(function(name) { %>* <%= name %>
-<% })%>
+{{=: names | prefixWith:'* '}}

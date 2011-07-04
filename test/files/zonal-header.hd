@@ -3,9 +3,7 @@
 "title": "hello",
 "subtitle": "world"
 ---
-#<%= title %>
-<% names.forEach(function(name) { %>* <%= name %>
-<% })%>
-#<%= subtitle %>
-<% zonal.names.forEach(function(name) { %>* <%= name %>
-<% })%>
+#{{= title }}
+{{=: names | prefixWith:'* '}}
+#{{= subtitle }}
+{{=: zonal.names | prefixWith:'* '}}
