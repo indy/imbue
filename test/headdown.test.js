@@ -1,5 +1,5 @@
 var assert = require('assert');
-var headdown = require('../lib/headdown');
+var imbue = require('../lib/headdown');
 var fs = require('fs');
 
 var prefix = 'test/files/';
@@ -17,22 +17,22 @@ function compare(data, filename) {
   var input = fs.readFileSync(prefix + filename, 'utf8');
   var expected = fs.readFileSync(prefix + filename + postfix, 'utf8');
 
-  assert.equal(headdown.renderString(input, data), expected);
-  assert.equal(headdown.renderFile(prefix + filename, data), expected);
+  assert.equal(imbue.renderString(input, data), expected);
+  assert.equal(imbue.renderFile(prefix + filename, data), expected);
 
-  var compiledFn = headdown.compile(input, {});
+  var compiledFn = imbue.compile(input, {});
   assert.equal(compiledFn(data), expected);
 
-  var compiledFn2 = headdown.compile(input, {bindings: data});
+  var compiledFn2 = imbue.compile(input, {bindings: data});
   assert.equal(compiledFn2({}), expected);
 }
 
 function compareHeader(filename, expected) {
-  assert.eql(headdown.getHeaderFromFile(prefix + filename), expected);
+  assert.eql(imbue.getHeaderFromFile(prefix + filename), expected);
 }
 
 exports['test version'] = function() {
-  assert.equal(headdown.version, '0.0.3');
+  assert.equal(imbue.version, '0.0.3');
 }
 
 exports['render without header'] = function() {
