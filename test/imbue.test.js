@@ -4,6 +4,7 @@ var fs = require('fs');
 
 var prefix = 'test/files/';
 var postfix = '.expected';
+var ext = '.imb';
 
 // rather than this simple file comparison it would be better to 
 // parse the resultant html and do a DOM compare
@@ -14,11 +15,11 @@ function dbgOutput(fn, data, filename) {
 }
 
 function compare(data, filename) {
-  var input = fs.readFileSync(prefix + filename, 'utf8');
-  var expected = fs.readFileSync(prefix + filename + postfix, 'utf8');
+  var input = fs.readFileSync(prefix + filename + ext, 'utf8');
+  var expected = fs.readFileSync(prefix + filename + ext + postfix, 'utf8');
 
   assert.equal(imbue.renderString(input, data), expected);
-  assert.equal(imbue.renderFile(prefix + filename, data), expected);
+  assert.equal(imbue.renderFile(prefix + filename + ext, data), expected);
 
   var compiledFn = imbue.compile(input, {});
   assert.equal(compiledFn(data), expected);
@@ -28,7 +29,7 @@ function compare(data, filename) {
 }
 
 function compareHeader(filename, expected) {
-  assert.eql(imbue.getHeaderFromFile(prefix + filename), expected);
+  assert.eql(imbue.getHeaderFromFile(prefix + filename + ext), expected);
 }
 
 exports['test version'] = function() {
@@ -37,31 +38,31 @@ exports['test version'] = function() {
 
 exports['render without header'] = function() {
   var locals = { names: ['foo', 'bar', 'baz']};
-  compare(locals, 'no-header.imb');
+  compare(locals, 'no-header');
 };
 
 exports['render with header'] = function() {
-  compare({}, 'header.imb');
+  compare({}, 'header');
 };
 
 exports['render zonal'] = function() {
   var zonal = {zonal: { names: ['foo', 'bar', 'baz']}};
-  compare(zonal, 'zonal.imb');
+  compare(zonal, 'zonal');
 };
 
 exports['render zonal with header'] = function() {
   var zonal = {zonal: { names: ['baq', 'baqq', 'baqqq']}};
-  compare(zonal, 'zonal-header.imb');
+  compare(zonal, 'zonal-header');
 };
 
 exports['render without markdown'] = function() {
-  compare({}, 'no-markdown.imb');
+  compare({}, 'no-markdown');
 };
 
 exports['compare header'] = function() {
-  compareHeader('header.imb', {names: ["foo", "bar", "baz"]});
-  compareHeader('zonal-header.imb', {names: ["foo", "bar", "baz"], 
-                                    title: "hello",
-                                    subtitle: "world"});
+  compareHeader('header', {names: ["foo", "bar", "baz"]});
+  compareHeader('zonal-header', {names: ["foo", "bar", "baz"], 
+                                 title: "hello",
+                                 subtitle: "world"});
 };
 
