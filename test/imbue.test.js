@@ -37,30 +37,30 @@ exports['test version'] = function() {
 
 exports['render without header'] = function() {
   var locals = { names: ['foo', 'bar', 'baz']};
-  compare(locals, 'no-header.hd');
+  compare(locals, 'no-header.imb');
 };
 
 exports['render with header'] = function() {
-  compare({}, 'header.hd');
+  compare({}, 'header.imb');
 };
 
 exports['render zonal'] = function() {
   var zonal = {zonal: { names: ['foo', 'bar', 'baz']}};
-  compare(zonal, 'zonal.hd');
+  compare(zonal, 'zonal.imb');
 };
 
 exports['render zonal with header'] = function() {
   var zonal = {zonal: { names: ['baq', 'baqq', 'baqqq']}};
-  compare(zonal, 'zonal-header.hd');
+  compare(zonal, 'zonal-header.imb');
 };
 
 exports['render without markdown'] = function() {
-  compare({}, 'no-markdown.hd');
+  compare({}, 'no-markdown.imb');
 };
 
 exports['compare header'] = function() {
-  compareHeader('header.hd', {names: ["foo", "bar", "baz"]});
-  compareHeader('zonal-header.hd', {names: ["foo", "bar", "baz"], 
+  compareHeader('header.imb', {names: ["foo", "bar", "baz"]});
+  compareHeader('zonal-header.imb', {names: ["foo", "bar", "baz"], 
                                     title: "hello",
                                     subtitle: "world"});
 };
