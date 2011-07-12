@@ -1,2 +1,2 @@
 
-module.exports = require('./lib/headdown');
+module.exports = require('./lib/imbue');

@@ -1,5 +1,5 @@
 var assert = require('assert');
-var imbue = require('../lib/headdown');
+var imbue = require('../lib/imbue');
 var fs = require('fs');
 
 var prefix = 'test/files/';
