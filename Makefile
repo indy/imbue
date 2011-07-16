@@ -1,3 +1,5 @@
+docs:
+	docco **/*.js
 
 test:
 	expresso test/*.test.js
