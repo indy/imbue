@@ -4,4 +4,4 @@ docs:
 test:
 	expresso test/*.test.js
 
-.PHONY: test
+.PHONY: test docs
