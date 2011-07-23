@@ -1,5 +1,6 @@
 docs:
-	docco **/*.js
+	docco index.js
+	docco lib/*.js
 
 test:
 	expresso test/*.test.js
