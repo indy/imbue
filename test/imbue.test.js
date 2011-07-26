@@ -18,8 +18,8 @@ function compare(data, filename) {
   var input = fs.readFileSync(prefix + filename + ext, 'utf8');
   var expected = fs.readFileSync(prefix + filename + ext + postfix, 'utf8');
 
-  assert.equal(imbue.renderString(input, data), expected);
-  assert.equal(imbue.renderFile(prefix + filename + ext, data), expected);
+  assert.equal(imbue.renderString(data, input), expected);
+  assert.equal(imbue.renderFile(data, prefix + filename + ext), expected);
 
   var compiledFn = imbue.compile(input, {});
   assert.equal(compiledFn(data), expected);
