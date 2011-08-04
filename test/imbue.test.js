@@ -29,7 +29,9 @@ function compare(data, filename) {
 }
 
 function compareHeader(filename, expected) {
-  assert.eql(imbue.getHeaderFromFile(prefix + filename + ext), expected);
+  var input = fs.readFileSync(prefix + filename + ext, 'utf8');
+  var res = imbue.getHeaderAndBody(input);
+  assert.eql(res.header, expected);
 }
 
 exports['test version'] = function() {
