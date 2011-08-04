@@ -1,4 +1,4 @@
-<h1 id="hello">hello</h1>
+<h1>hello</h1>
 
 <ul>
 <li>foo</li>
@@ -6,7 +6,7 @@
 <li>baz</li>
 </ul>
 
-<h1 id="world">world</h1>
+<h1>world</h1>
 
 <ul>
 <li>baq</li>
