@@ -4,7 +4,6 @@
   , "description": "markdown + ejs + header information"
   , "keywords": []
   , "author": "indy <email@indy.io>"
-  , "dependencies": {"ejs": "0.4.2"}
   , "main": "index"
   , "engines": { "node": ">=0.4.x" }
 }
