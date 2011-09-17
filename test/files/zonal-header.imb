@@ -3,7 +3,7 @@
 "title": "hello",
 "subtitle": "world"
 ---
-#{{= page.title }}
-{{=: page.names | prefixWith:'* '}}
-#{{= page.subtitle }}
+#{{= title }}
+{{=: names | prefixWith:'* '}}
+#{{= subtitle }}
 {{=: zonal.names | prefixWith:'* '}}

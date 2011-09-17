@@ -63,9 +63,9 @@ exports['render without markdown'] = function() {
 };
 
 exports['compare header'] = function() {
-  compareHeader('header', {page: {names: ["foo", "bar", "baz"]}});
-  compareHeader('zonal-header', {page: {names: ["foo", "bar", "baz"], 
+  compareHeader('header', {names: ["foo", "bar", "baz"]});
+  compareHeader('zonal-header', {names: ["foo", "bar", "baz"], 
                                         title: "hello",
-                                        subtitle: "world"}});
+                                        subtitle: "world"});
 };
 

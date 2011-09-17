@@ -2,4 +2,4 @@
 "names": ["foo", "bar", "baz"],
 "_noMarkdown": true
 ---
-{{=: page.names | prefixWith:'* '}}
+{{=: names | prefixWith:'* '}}
