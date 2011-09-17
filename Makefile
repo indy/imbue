@@ -1,5 +1,6 @@
 EXPRESSO ?= `which expresso`
 DOCCO ?= `which docco`
+WATCHR ?= `which watchr`
 
 test:
 	@@if test ! -z ${EXPRESSO}; then \
@@ -18,4 +19,14 @@ docs:
 		echo "You can install it by running: npm install docco -g"; \
 	fi
 
-.PHONY: test docs
+watch:
+	@@if test ! -z ${WATCHR}; then \
+	  echo "Watching lib and test folders..."; \
+	  watchr aux/watching.rb; \
+	else \
+		echo "You must have the watchr installed in order to watch Full Meta Jacket."; \
+		echo "You can install it by running: gem install watchr"; \
+	fi
+
+
+.PHONY: test docs watch
