@@ -4,7 +4,7 @@ var fs = require('fs');
 
 var prefix = 'test/files/';
 var postfix = '.expected';
-var ext = '.imb';
+var ext = '.imd';
 
 // rather than this simple file comparison it would be better to 
 // parse the resultant html and do a DOM compare
