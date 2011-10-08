@@ -69,3 +69,16 @@ exports['compare header'] = function() {
                                         subtitle: "world"});
 };
 
+exports['dealing with invalid headers'] = function() {
+  var filename = 'invalid'
+  var input = fs.readFileSync(prefix + filename + ext, 'utf8');
+
+  assert.throws(function() {
+    try {
+      imbue.parse(input);
+    } catch(e) {
+      assert.equal(e.message, "failed to parse the JSON header (are all the lines separated with a comma?)");
+      throw(e);
+    }
+  }, 'whoops', 'ok');
+}
