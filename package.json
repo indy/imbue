@@ -3,7 +3,7 @@
   , "version": "0.0.3"
   , "description": "markdown + ejs + header information"
   , "keywords": []
-  , "author": "indy <email@indy.io>"
+  , "author": "Inderjit Gill <email@indy.io>"
   , "main": "index"
   , "engines": { "node": ">=0.4.x" }
 }
