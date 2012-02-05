@@ -1,7 +1,7 @@
 <a name="README">[Imbue](https://github.com/indy/imbue)</a>
 =======
 
-The bastard child of [Markdown](http://daringfireball.net/projects/markdown/) and [EJS](http://embeddedjs.com/) with an extra header tacked on.
+The bastard child of [Markdown](http://daringfireball.net/projects/markdown/) and [EJS](http://embeddedjs.com/) with an extra header tacked on. Used as the markup/templating library of [Full Meta Jacket](https://github.com/indy/full-meta-jacket)
 
 ## License 
 
