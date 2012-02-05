@@ -1,7 +1,7 @@
 <a name="README">[Imbue](https://github.com/indy/imbue)</a>
 =======
 
-  markdown + ejs + header information
+The bastard child of [Markdown](http://daringfireball.net/projects/markdown/) and [EJS](http://embeddedjs.com/) with an extra header tacked on.
 
 ## License 
 
