@@ -1,5 +1,5 @@
-
-# headdown
+<a name="README">[Imbue](https://github.com/indy/imbue)</a>
+=======
 
   markdown + ejs + header information
 
@@ -7,7 +7,7 @@
 
 (The MIT License)
 
-Copyright (c) 2011 indy &lt;email@indy.io&gt;
+Copyright (c) 2012 Inderjit Gill &lt;email@indy.io&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
