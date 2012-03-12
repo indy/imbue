@@ -1,6 +1,6 @@
 {
   "name": "imbue",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Markdown spliced with EJS and a header",
   "keywords": [],
   "author": "Inderjit Gill <email@indy.io>",

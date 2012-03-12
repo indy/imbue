@@ -14,17 +14,17 @@ function dbgOutput(fn, data, filename) {
   console.log(fn(input, data));
 }
 
-function compare(data, filename) {
+function compare(data, filename, useMarkdown) {
   var input = fs.readFileSync(prefix + filename + ext, 'utf8');
   var expected = fs.readFileSync(prefix + filename + ext + postfix, 'utf8');
 
   var hb = imbue.parse(input);
-  var res = imbue.render(imbue.mergeMeta(hb.header, data), hb.body)
+  var res = imbue.render(imbue.mergeMeta(hb.header, data), hb.body, useMarkdown)
+
   assert.equal(res, expected);
 
   var compiledFn = imbue.compile(input, {});
 //  assert.equal(compiledFn(data), expected);
-
   var compiledFn2 = imbue.compile(input, {bindings: data});
 //  assert.equal(compiledFn2({}), expected);
 }
@@ -36,30 +36,30 @@ function compareHeader(filename, expected) {
 }
 
 exports['test version'] = function() {
-  assert.equal(imbue.version, '0.0.4');
+  assert.equal(imbue.version, '0.0.5');
 }
 
 exports['render without header'] = function() {
   var locals = { names: ['foo', 'bar', 'baz']};
-  compare(locals, 'no-header');
+  compare(locals, 'no-header', true);
 };
 
 exports['render with header'] = function() {
-  compare({}, 'header');
+  compare({}, 'header', true);
 };
 
 exports['render zonal'] = function() {
   var zonal = {zonal: { names: ['foo', 'bar', 'baz']}};
-  compare(zonal, 'zonal');
+  compare(zonal, 'zonal', true);
 };
 
 exports['render zonal with header'] = function() {
   var zonal = {zonal: { names: ['baq', 'baqq', 'baqqq']}};
-  compare(zonal, 'zonal-header');
+  compare(zonal, 'zonal-header', true);
 };
 
 exports['render without markdown'] = function() {
-  compare({}, 'no-markdown');
+  compare({}, 'no-markdown', false);
 };
 
 exports['compare header'] = function() {
