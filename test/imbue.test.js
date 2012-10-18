@@ -36,7 +36,7 @@ function compareHeader(filename, expected) {
 }
 
 exports['test version'] = function() {
-  assert.equal(imbue.version, '0.0.5');
+  assert.equal(imbue.version, '0.0.6');
 }
 
 exports['render without header'] = function() {
