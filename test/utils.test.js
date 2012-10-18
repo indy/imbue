@@ -29,6 +29,17 @@ exports['array priority merge'] = function() {
               c: [1, 2, 3]});
 }
 
+exports['array priority merge'] = function() {
+  var alpha = {a: [1,2, 3]};
+  var beta = {a: [4, 5, 6, 7, 8, 9]};
+
+  assert.eql(utils.deepMerge(alpha, beta),
+             {a: [1, 2, 3]});
+
+  assert.eql(utils.deepMerge(beta, alpha),
+             {a: [4, 5, 6, 7, 8, 9]});
+}
+
 
 exports['merge returns copy not a reference'] = function() {
   var beta = {b: {d: 3, e: 4}};
