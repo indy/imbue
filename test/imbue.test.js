@@ -69,6 +69,11 @@ exports['compare header'] = function() {
                                         subtitle: "world"});
 };
 
+exports['only string'] = function() {
+  var res = imbue.render("world", "hello {{= content}}", false);
+  assert.equal(res, "hello world");  
+};
+
 exports['dealing with invalid headers'] = function() {
   var filename = 'invalid'
   var input = fs.readFileSync(prefix + filename + ext, 'utf8');
